@@ -1,0 +1,37 @@
+# Variable with 6 parameters. No brackets used. So this is not a list
+ten_things = "Apples Oranges Crows Telephone Light Sugar"
+
+# show message
+print("Wait there are not 10 things in that list. Let's fix that.")
+
+# variable = variable . split method (' space between words that are split ') 
+stuff = ten_things.split(' ')
+# list name = [ list "text" items]
+more_stuff = ["Day", "Night", "Song", "Frisbee", 
+              "Corn", "Banana", "Girl", "Boy"]
+
+# new Infinitive Loop get nr of items in list method (len)(parameter) is not 10             
+while len(stuff) != 10:
+    # variable = list . pop method (which removes and returns last item from the list)
+    next_one = more_stuff.pop()
+    # show message, variable
+    print("Adding: ", next_one)
+    # variable . make last item on list (variable)... that you removed and returned with pop
+    stuff.append(next_one)
+    # show message {function applied to list inside a (variable)}
+    print(f"There are {len(stuff)} items now.")
+
+# show message, variable showing list which is split with a space   
+print("There we go: ", stuff)
+
+# show message
+print("Let's do some things with stuff.")
+
+print(stuff[1]) # show message (variable list item 1)
+# show message (variable list item -1) as 0 is the first. -1 is the last item on the list
+print(stuff[-1])
+# show message (variable . pop = show last item on list)
+print(stuff.pop())
+print(' '.join(stuff)) # show message ('empty space'. join method (variable = list))
+# show message ('# character'. join method (variable [list item 3 : list item 5]))
+print('#'.join(stuff[3:5])) 
