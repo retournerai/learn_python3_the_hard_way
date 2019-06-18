@@ -1,0 +1,76 @@
+# create a mapping of state to abbreviation ('OR', 'FL', etc.)
+states = { # variable = dictionary
+    'Oregon': 'OR', # Key : Key value
+    'Florida': 'FL',
+    'California': 'CA',
+    'New York': 'NY',
+    'Michigan': 'MI',
+}
+
+# create a basic set of states and some cities in them
+cities = { # variable = dictionary
+    'CA': 'San Francisco', # Key : Key value
+    'MI': 'Detroit',
+    'FL': 'Jacksonville'
+}
+
+# add some more cities
+cities['NY'] = 'New York' # Create new Key with Key Value inside 'cities' dictionary
+cities['OR'] = 'Portland' # Create new Key with Key Value inside 'cities' dictionary
+
+# print out some cities
+print('-' * 10) # show 10 times the - sign ## ----------
+print("NY State has: ", cities['NY']) # Show message, variable [key: NY]
+print("OR State has: ", cities['OR']) # Show message, variable [key: OR]
+
+# print some more states
+print('-' * 10) # show 10 times the - sign ## ----------
+print("Michigan's abbreviation is: ", states['Michigan']) # Show message, variable [key: Michigan]
+print("Florida's abbreviation is: ", states['Florida']) # Show message, variable [key: Florida]
+
+# do it by using the state then cities dict
+print('-' * 10) # show 10 times the - sign ## ----------
+# Show message, look-up 'Michigan Key in 'states' dict which returns MI, then 
+# look-up 'MI' Key in 'cities' dict to show 'cities' Key value: 'Detroit' in message
+print("Michigan has: ", cities[states['Michigan']]) 
+print("Florida has: ", cities[states['Florida']]) 
+
+# print every state abbreviation
+print('-' * 10) # show 10 times the - sign ## ----------
+
+for state, abbrev in list(states.items()): 
+# New Loop to create list of items from dataset: 'states', a dictionary
+
+# 'states' variable = a dictionary
+
+# in = specify dataset being used. in = True if dataset contains data. False if not
+
+# state, abbrev are new variables created at the start of the loop, and assigned 
+# to the 'Key' and 'Key value' from 'states' dictionary dataset
+
+    print(f"{state} is abbreviated {abbrev}") # show variable 'state' with message 'abbrev'
+   
+# print every city in state
+print('-' * 10) # show 10 times the - sign ## ----------
+# loop create list from all 'states' dictionary items and re-assign 'Key' to 'abbrev' variable
+# and 'Key value' to 'city' variable. Loop ends at the end of the list
+for abbrev, city in list(states.items()):
+    print(f"{abbrev} has the city {city}") # show message with variable
+    
+# now do both at the same time
+print('-' * 10) # show 10 times the - sign ## ----------
+for state, abbrev in list(states.items()):
+    print(f"{state} state is abbriviated {abbrev}")
+    print(f"and has city {cities[abbrev]}")
+
+print('-' * 10) # show 10 times the - sign ## ----------
+# safely get a abbreviation by state that might not be there
+state = states.get('Texas') # variable = 'variable'.function('parameter')
+
+# if-statement, outside a function
+if not state: # if not 'variable' then:
+    print("Sorry, no Texas.") # Show message
+    
+# get a city with a default value
+city = cities.get('TX', 'Does Not Exist') # variable = 'variable'.function('parameter', 'parameter')
+print(f"The city for the state 'TX' is: {city}") # show message {variable} returns 'parameter'.
